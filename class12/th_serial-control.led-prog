@@ -1,0 +1,10 @@
+import serial
+baud=115200
+port='COM3'
+s = serial.Serial(port)
+s.baudrate = baud
+while True:
+    inp=input('do you want to turn the led on or off:  ')
+#Send the string 'hello' to the microbit
+    s.write(bytes(inp, 'utf-8'))
+    
