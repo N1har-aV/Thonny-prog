@@ -1,8 +1,9 @@
 import serial
 baud=115200
-port='COM3'
-s = serial.Serial(port, timeout = 1.0)
+port='COM4'
+s = serial.Serial(port, timeout = 1.0) 
 s.baudrate = baud
 while True:
-    s.write(bytes('hello', 'utf-8'))
+    led_state=input("state of the LED\n")
+    s.write(bytes(led_state, 'utf-8'))
     
